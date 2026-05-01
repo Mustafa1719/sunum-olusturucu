@@ -13,7 +13,7 @@ function fontFace(fontStyle) {
 
 function buildTitleSlide(slide, data, colors, font) {
   // Alt renk şeridi
-  slide.addShape(pptxgen.ShapeType.rect, {
+  slide.addShape('rect', {
     x: 0, y: 6.6, w: 13.33, h: 0.9,
     fill: { color: hex(colors.primaryColor) },
   });
@@ -39,14 +39,14 @@ function buildTitleSlide(slide, data, colors, font) {
   }
 
   // Sol dikey şerit
-  slide.addShape(pptxgen.ShapeType.rect, {
+  slide.addShape('rect', {
     x: 0, y: 0, w: 0.18, h: 7.5,
     fill: { color: hex(colors.accentColor || colors.secondaryColor) },
   });
 }
 
 function buildSectionDivider(slide, data, colors, font) {
-  slide.addShape(pptxgen.ShapeType.rect, {
+  slide.addShape('rect', {
     x: 0, y: 0, w: 13.33, h: 7.5,
     fill: { color: hex(colors.primaryColor) },
   });
@@ -73,7 +73,7 @@ function buildSectionDivider(slide, data, colors, font) {
 
 function buildContentSlide(slide, data, colors, font) {
   // Başlık arka planı
-  slide.addShape(pptxgen.ShapeType.rect, {
+  slide.addShape('rect', {
     x: 0, y: 0, w: 13.33, h: 1.15,
     fill: { color: hex(colors.primaryColor) },
   });
@@ -106,7 +106,7 @@ function buildContentSlide(slide, data, colors, font) {
 }
 
 function buildTwoColumnSlide(slide, data, colors, font) {
-  slide.addShape(pptxgen.ShapeType.rect, {
+  slide.addShape('rect', {
     x: 0, y: 0, w: 13.33, h: 1.15,
     fill: { color: hex(colors.primaryColor) },
   });
@@ -143,14 +143,14 @@ function buildTwoColumnSlide(slide, data, colors, font) {
   }
 
   // Dikey ayraç
-  slide.addShape(pptxgen.ShapeType.rect, {
+  slide.addShape('rect', {
     x: 6.6, y: 1.5, w: 0.05, h: 5.5,
     fill: { color: hex(colors.accentColor || colors.secondaryColor) },
   });
 }
 
 function buildDataHighlightSlide(slide, data, colors, font) {
-  slide.addShape(pptxgen.ShapeType.rect, {
+  slide.addShape('rect', {
     x: 0, y: 0, w: 13.33, h: 1.15,
     fill: { color: hex(colors.primaryColor) },
   });
@@ -170,7 +170,7 @@ function buildDataHighlightSlide(slide, data, colors, font) {
 
   dataItems.slice(0, 3).forEach((item, i) => {
     const xPos = startX + i * (cardW + gap);
-    slide.addShape(pptxgen.ShapeType.rect, {
+    slide.addShape('rect', {
       x: xPos, y: 1.6, w: cardW, h: 4.2,
       fill: { color: hex(colors.accentColor || colors.secondaryColor) },
       line: { color: hex(colors.primaryColor), width: 2 },
@@ -186,7 +186,7 @@ function buildDataHighlightSlide(slide, data, colors, font) {
 }
 
 function buildQuoteSlide(slide, data, colors, font) {
-  slide.addShape(pptxgen.ShapeType.rect, {
+  slide.addShape('rect', {
     x: 0, y: 0, w: 0.5, h: 7.5,
     fill: { color: hex(colors.accentColor || colors.secondaryColor) },
   });
@@ -212,7 +212,7 @@ function buildQuoteSlide(slide, data, colors, font) {
 }
 
 function buildAgendaSlide(slide, data, colors, font) {
-  slide.addShape(pptxgen.ShapeType.rect, {
+  slide.addShape('rect', {
     x: 0, y: 0, w: 13.33, h: 1.15,
     fill: { color: hex(colors.primaryColor) },
   });
@@ -226,7 +226,7 @@ function buildAgendaSlide(slide, data, colors, font) {
   items.forEach((item, i) => {
     const yPos = 1.5 + i * 0.85;
 
-    slide.addShape(pptxgen.ShapeType.ellipse, {
+    slide.addShape('ellipse', {
       x: 0.4, y: yPos + 0.05, w: 0.5, h: 0.5,
       fill: { color: hex(colors.accentColor || colors.secondaryColor) },
     });
